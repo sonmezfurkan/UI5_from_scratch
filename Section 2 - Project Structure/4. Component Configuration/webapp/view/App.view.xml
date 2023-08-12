@@ -1,0 +1,7 @@
+<mvc:View
+   controllerName="ui5.product.list.controller.App"
+   displayBlock="true"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Button text="Create New Product" press="onPressCreateNewProduct" />
+</mvc:View>
