@@ -1,0 +1,34 @@
+specVersion: '3.0'
+metadata:
+  name: ui5.product.list
+type: application
+framework:
+  name: SAPUI5
+  version: "1.114.0"
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: themelib_sap_horizon
+      optional: true
+server:
+  customMiddleware:
+  - name: ui5-middleware-livereload
+    afterMiddleware: compression
+    configuration:
+      debug: true
+      extraExts: "xml,json,properties"
+      path: "webapp"
+builder:
+  customTasks:
+    - name: transpile-babel
+      beforeTask: generateComponentPreload
+
+---
+# Babel task configuration
+specVersion: '3.0'
+kind: extension
+type: task
+metadata:
+  name: transpile-babel
+task:
+  path: lib/tasks/transpile-babel.js

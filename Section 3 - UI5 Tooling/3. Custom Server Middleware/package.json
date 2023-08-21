@@ -1,0 +1,16 @@
+{
+  "name": "my-products",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@ui5/cli": "^3.3.2",
+    "ui5-middleware-livereload": "^0.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
