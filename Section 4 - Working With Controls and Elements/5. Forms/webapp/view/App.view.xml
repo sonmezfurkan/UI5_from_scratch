@@ -1,0 +1,65 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App class="myProductsList">
+      <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
+          <form:SimpleForm
+            layout="ResponsiveGridLayout"
+            editable="true"
+            breakpointM="600px"
+            breakpointL="1024px"
+            breakpointXL="1440px"
+            emptySpanM="0"
+            emptySpanL="1"
+            emptySpanXL="1"
+            labelSpanS="12"
+            labelSpanM="3"
+            labelSpanL="4"
+            labelSpanXL="4"
+            columnsL="2"
+            columnsXL="2">
+            <form:content>
+              <core:Title text="{i18n>productDetails}" />
+              <Label text="{i18n>productName}" />
+              <Input id="idProductName" maxLength="40" />
+              <Label text="{i18n>category}" />
+              <ComboBox id="idCategory">
+                <items>
+                  <core:Item key="" text="" />
+                  <core:Item key="0" text="Food" />
+                  <core:Item key="1" text="Beverages" />
+                  <core:Item key="2" text="Electronics" />
+                </items>
+              </ComboBox>
+              <Label text="{i18n>price}" />
+              <Input id="idPrice" type="Number" />
+              <Input value="EUR" editable="false">
+                <layoutData>
+                  <l:GridData span="XL1 L2 M3 S12" />
+                </layoutData>
+              </Input>
+              <core:Title text="{i18n>dates}" />
+              <Label text="{i18n>releaseDate}" />
+              <DatePicker id="idReleaseDate" placeholder="{i18n>releaseDate}" />
+              <Label text="{i18n>discontinuedDate}" />
+              <DatePicker id="idDiscontinuedDate" placeholder="{i18n>discontinuedDate}" />
+            </form:content>
+          </form:SimpleForm>
+          <Button type="Emphasized" text="{i18n>buttonTextCreate}" press="onPressCreateNewProduct" />
+          <List
+            id="idProductList"
+            class="sapUiSmallMarginTop listWithSmallerTitle"
+            headerText="{i18n>listHeader}"
+            noDataText="{i18n>noDataText}"
+            mode="Delete"
+            delete="onPressDelete" />
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>

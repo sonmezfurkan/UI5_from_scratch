@@ -1,0 +1,32 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App class="myProductsList">
+      <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
+          <Input
+            id="idProductName"
+            class="sapUiTinyMarginEnd"
+            placeholder="{i18n>productName}"
+            width="20rem"
+            maxLength="40" />
+          <Button text="{i18n>buttonTextCreate}" press="onPressCreateNewProduct" />
+          <List
+            id="idProductList"
+            class="sapUiSmallMarginTop listWithSmallerTitle"
+            headerText="{i18n>listHeader}"
+            noDataText="{i18n>noDataText}"
+            mode="Delete"
+            delete="onPressDelete">
+            <items>
+              <StandardListItem title="Product 1" />
+              <StandardListItem title="Product 2" />
+              <StandardListItem title="Product 3" />
+            </items>
+          </List>
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>
