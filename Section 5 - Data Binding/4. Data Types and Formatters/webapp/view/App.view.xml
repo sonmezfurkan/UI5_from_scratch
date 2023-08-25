@@ -1,0 +1,62 @@
+<mvc:View controllerName="ui5.product.list.controller.App" displayBlock="true"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:form="sap.ui.layout.form"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Shell>
+      <App class="myProductsApp">
+         <pages>
+            <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
+               <content>
+                  <List id="idProductList" class="sapUiSmallMarginTop listWithSmallerTitle" mode="Delete" delete="onPressDelete" noDataText="{i18n>noDataText}" items="{product>/items}">
+                     <headerToolbar>
+                        <Toolbar>
+                           <Title text="{i18n>listHeader}" />
+                           <ToolbarSpacer />
+                           <Button icon="sap-icon://add" press="onPressAddNewProduct" />
+                        </Toolbar>
+                     </headerToolbar>
+                     <items>
+                        <ObjectListItem
+                           title="{product>Name}"
+                           number="{
+                              parts: [{ path: 'product>Price' }, { path: 'product>currency' }],
+                              type: 'sap.ui.model.type.Currency',
+                              formatOptions: {
+                                 showMeasure: false
+                              }
+                           }"
+                           numberUnit="{product>Currency}">
+                           <attributes>
+                              <ObjectAttribute title="{i18n>category}" text="{product>Category}" />
+                              <ObjectAttribute
+                                 title="{i18n>releaseDate}"
+                                 text="{
+                                    path: 'product>ReleaseDate',
+                                    type: 'sap.ui.model.type.Date',
+                                    formatOptions: {
+                                       source: {pattern: 'yyyy-MM-ddTHH:mm:ss.SSSX'},
+                                       style: 'medium'
+                                    }
+                                 }" />
+                           </attributes>
+                           <firstStatus>
+                              <ObjectStatus
+                                 text="{
+                                    path: 'product>DiscontinuedDate',
+                                    formatter: '.formatter.formatAvailabilityText'
+                                 }"
+                                 state="{
+                                    path: 'product>DiscontinuedDate',
+                                    formatter: '.formatter.formatAvailabilityState'
+                                 }" />
+                           </firstStatus>
+                        </ObjectListItem>
+                     </items>
+                  </List>
+               </content>
+            </Page>
+         </pages>
+      </App>
+   </Shell>
+</mvc:View>

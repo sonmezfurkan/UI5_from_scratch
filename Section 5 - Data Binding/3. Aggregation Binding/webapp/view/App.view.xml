@@ -1,0 +1,42 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App class="myProductsList">
+      <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
+          <List
+            id="idProductList"
+            items="{product>/items}"
+            class="sapUiSmallMarginTop listWithSmallerTitle"
+            noDataText="{i18n>noDataText}"
+            mode="Delete"
+            delete="onPressDelete">
+            <headerToolbar>
+              <Toolbar>
+                <Title text="{i18n>listHeader}" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://add" press="onPressAddNewProduct" />
+              </Toolbar>
+            </headerToolbar>
+            <items>
+              <ObjectListItem
+                title="{product>Name}"
+                number="{product>Price}"
+                numberUnit="EUR">
+                <attributes>
+                  <ObjectAttribute title="Category" text="{product>Category}" />
+                  <ObjectAttribute title="Release date" text="{product>ReleaseDate}" />
+                </attributes>
+                <firstStatus>
+                  <ObjectStatus text="{product>DiscontinuedDate}" />
+                </firstStatus>
+              </ObjectListItem>
+            </items>
+          </List>
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>

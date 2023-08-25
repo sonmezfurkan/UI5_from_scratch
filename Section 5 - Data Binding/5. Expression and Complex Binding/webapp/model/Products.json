@@ -1,0 +1,51 @@
+{
+  "items": [{
+    "Name": "Bread",
+    "Category": "0",
+    "Price": 2.35,
+    "Currency": "EUR",
+    "ReleaseDate": "2022-08-03T00:00:00.000Z",
+    "DiscontinuedDate": null
+  }, {
+    "Name": "Red wine",
+    "Category": "1",
+    "Price": 14.50,
+    "Currency": "EUR",
+    "ReleaseDate": "2022-02-23T00:00:00.000Z",
+    "DiscontinuedDate": "2023-01-10T00:00:00.000Z",
+    "Width": 6,
+    "Height": 34,
+    "Depth": 6
+  }, {
+    "Name": "Dr Pepper",
+    "Category": "1",
+    "Price": 1.40,
+    "Currency": "EUR",
+    "ReleaseDate": "2020-08-03T00:00:00.000Z",
+    "DiscontinuedDate": null
+  }, {
+    "Name": "Basmati Rice",
+    "Category": "0",
+    "Price": 22.55,
+    "Currency": "EUR",
+    "ReleaseDate": "2022-05-01T00:00:00.000Z",
+    "DiscontinuedDate": null,
+    "Width": 20,
+    "Height": 30,
+    "Depth": 15
+  }, {
+    "Name": "HDMI Cable",
+    "Category": "2",
+    "Price": 7.15,
+    "Currency": "EUR",
+    "ReleaseDate": "2021-03-21T00:00:00.000Z",
+    "DiscontinuedDate": "2023-01-01T00:00:00.000Z"
+  }, {
+    "Name": "Wireless Mouse",
+    "Category": "2",
+    "Price": 62.10,
+    "Currency": "EUR",
+    "ReleaseDate": "2022-05-01T00:00:00.000Z",
+    "DiscontinuedDate": null
+  }]
+}
