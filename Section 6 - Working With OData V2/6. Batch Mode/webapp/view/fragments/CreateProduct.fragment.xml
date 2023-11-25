@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+  <Dialog title="{i18n>createNewProduct}" contentWidth="800px" afterClose="onAfterCloseDialog">
+    <content>
+      <form:SimpleForm
+        layout="ResponsiveGridLayout"
+        editable="true"
+        breakpointM="600px"
+        breakpointL="1024px"
+        breakpointXL="1440px"
+        emptySpanM="0"
+        emptySpanL="1"
+        emptySpanXL="1"
+        labelSpanS="12"
+        labelSpanM="3"
+        labelSpanL="4"
+        labelSpanXL="4"
+        columnsL="2"
+        columnsXL="2">
+        <form:content>
+          <core:Title text="{i18n>productDetails}" />
+          <Label required="true" text="{i18n>productName}" />
+          <Input
+            id="idProductName"
+            maxLength="40"
+            value="{input>/Name}"
+            valueLiveUpdate="true"
+            valueState="{= ${validation>/Name} ? 'None' : 'Error'}" />
+          <Label required="true" text="{i18n>category}" />
+          <ComboBox
+            id="idCategory"
+            items="{/Categories}"
+            selectedKey="{input>/Category}"
+            valueState="{= ${validation>/Category} ? 'None' : 'Error'}">
+            <items>
+              <core:Item key="{ID}" text="{Name}" />
+            </items>
+          </ComboBox>
+          <Label required="true" text="{i18n>price}" />
+          <Input
+            id="idPrice"
+            type="Number"
+            value="{input>/Price}"
+            valueLiveUpdate="true"
+            valueState="{= ${validation>/Price} ? 'None' : 'Error'}" />
+          <Input value="EUR" editable="false">
+            <layoutData>
+              <l:GridData span="XL1 L2 M3 S12" />
+            </layoutData>
+          </Input>
+          <core:Title text="{i18n>datesAndRating}" />
+          <Label required="true" text="{i18n>releaseDate}" />
+          <DatePicker
+            id="idReleaseDate"
+            dateValue="{input>/ReleaseDate}"
+            valueState="{= ${validation>/ReleaseDate} ? 'None' : 'Error'}" />
+          <Label text="{i18n>discontinuedDate}" />
+          <DatePicker id="idDiscontinuedDate" dateValue="{input>/DiscontinuedDate}" />
+          <Label text="{i18n>rating}" />
+          <RatingIndicator value="{input>/Rating}" />
+        </form:content>
+      </form:SimpleForm>
+    </content>
+    <beginButton>
+      <Button type="Emphasized" text="{i18n>create}" press="onPressCreateNewProduct" />
+      </beginButton>
+      <endButton>
+        <Button text="{i18n>cancel}" press="onPressCancelNewProduct" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

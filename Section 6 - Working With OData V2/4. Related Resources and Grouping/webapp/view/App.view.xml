@@ -1,0 +1,84 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App class="myProductsList">
+      <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
+        <List
+          id="idProductList"
+          items="{
+            path: '/Products',
+            parameters: {
+              expand: 'Category'
+            },
+            groupHeaderFactory: '.formatter.formatGroupHeader'
+          }"
+          class="sapUiSmallMarginTop listWithSmallerTitle"
+          noDataText="{i18n>noDataText}"
+          mode="Delete"
+          delete="onPressDelete"
+          updateFinished="onProductsLoaded"
+          growing="true"
+          growingThreshold="4">
+          <headerToolbar>
+            <Toolbar>
+              <Title id="idListTitle" text="{i18n>listHeader}" />
+              <ToolbarSpacer />
+              <Button icon="sap-icon://filter" press="onFilterButtonPressed" />
+              <Button icon="sap-icon://sort" press="onSortButtonPressed" />
+              <Button icon="sap-icon://group-2" press="onGroupButtonPressed" />
+              <Button icon="sap-icon://add" press="onPressAddNewProduct" />
+            </Toolbar>
+          </headerToolbar>
+            <infoToolbar>
+              <Toolbar id="idFilterInfoToolbar" visible="false">
+                <Text id="idFilterText" />
+              </Toolbar>
+            </infoToolbar>
+          <items>
+            <ObjectListItem
+              title="{Name}"
+              number="{
+                parts: ['Price', 'Currency'],
+                type: 'sap.ui.model.type.Currency',
+                formatOptions: {
+                  showMeasure: false
+                }
+              }"
+              numberState="{= ${Price} > 20 ? 'Warning' : 'None'}"
+              numberUnit="EUR">
+              <attributes>
+                <ObjectAttribute
+                  title="Category"
+                  text="{Category/Name}" />
+                <ObjectAttribute
+                  title="Release date"
+                  text="{
+                      path: 'ReleaseDate',
+                      type: 'sap.ui.model.type.Date',
+                      formatOptions: {
+                        style: 'short'
+                      }
+                    }" />
+              </attributes>
+              <firstStatus>
+                <ObjectStatus
+                  text="{
+                    path: 'DiscontinuedDate',
+                    formatter: '.formatter.formatAvailabilityText'
+                  }"
+                  state="{
+                    path: 'DiscontinuedDate',
+                    formatter: '.formatter.formatAvailabilityState'
+                  }" />
+              </firstStatus>
+            </ObjectListItem>
+          </items>
+        </List>
+      </Page>
+    </App>
+  </Shell>
+</mvc:View>
