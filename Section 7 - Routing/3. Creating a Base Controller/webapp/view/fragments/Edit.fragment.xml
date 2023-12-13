@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+  <Dialog title="{i18n>editProduct}" contentWidth="800px" afterClose="onAfterCloseDialog">
+    <content>
+      <form:SimpleForm
+        layout="ResponsiveGridLayout"
+        editable="true"
+        breakpointM="600px"
+        breakpointL="1024px"
+        breakpointXL="1440px"
+        emptySpanM="0"
+        emptySpanL="1"
+        emptySpanXL="1"
+        labelSpanS="12"
+        labelSpanM="3"
+        labelSpanL="4"
+        labelSpanXL="4"
+        columnsL="2"
+        columnsXL="2">
+        <form:content>
+          <core:Title text="{i18n>productDetails}" />
+          <Label text="{i18n>productName}" />
+          <Input
+            id="idEditProductName"
+            maxLength="40"
+            value="{Name}"
+            valueLiveUpdate="true" />
+          <Label text="{i18n>category}" />
+          <ComboBox
+            id="idEditCategory"
+            items="{/Categories}"
+            enabled="false"
+            selectedKey="{Category/ID}">
+            <items>
+              <core:Item key="{ID}" text="{Name}" />
+            </items>
+          </ComboBox>
+          <Label text="{i18n>price}" />
+          <Input
+            id="idEditPrice"
+            type="Number"
+            value="{Price}"
+            valueLiveUpdate="true"/>
+          <Input value="EUR" editable="false">
+            <layoutData>
+              <l:GridData span="XL1 L2 M3 S12" />
+            </layoutData>
+          </Input>
+          <core:Title text="{i18n>datesAndRating}" />
+          <Label text="{i18n>releaseDate}" />
+          <DatePicker
+            id="idEditReleaseDate"
+            dateValue="{ReleaseDate}" />
+          <Label text="{i18n>discontinuedDate}" />
+          <DatePicker id="idEditDiscontinuedDate" dateValue="{DiscontinuedDate}" />
+          <Label text="{i18n>rating}" />
+          <RatingIndicator id="idEditRating" value="{Rating}" />
+        </form:content>
+      </form:SimpleForm>
+    </content>
+    <beginButton>
+      <Button type="Emphasized" text="{i18n>update}" press="onPressUpdateProduct" />
+      </beginButton>
+      <endButton>
+        <Button text="{i18n>cancel}" press="onPressCancelEditProduct" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

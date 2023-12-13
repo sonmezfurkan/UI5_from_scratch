@@ -1,0 +1,12 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.NotFound"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  <IllustratedMessage illustrationType="sapIllus-PageNotFound">
+    <additionalContent>
+      <Button text="{i18n>goBack}" press="onNavBack" />
+    </additionalContent>
+  </IllustratedMessage>
+</mvc:View>

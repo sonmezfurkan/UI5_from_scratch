@@ -1,0 +1,10 @@
+<mvc:View
+  controllerName="ui5.product.list.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App id="app" class="myProductsList" />
+  </Shell>
+</mvc:View>

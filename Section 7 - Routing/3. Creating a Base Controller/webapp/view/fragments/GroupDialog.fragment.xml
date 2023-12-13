@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+  <ViewSettingsDialog confirm="onConfirmGroup">
+    <groupItems>
+      <ViewSettingsItem text="{i18n>category}" key="Category/ID" />
+    </groupItems>
+  </ViewSettingsDialog>
+</core:FragmentDefinition>
