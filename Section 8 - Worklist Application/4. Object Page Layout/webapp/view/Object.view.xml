@@ -1,0 +1,148 @@
+<mvc:View
+    controllerName="ui5.my.products.controller.Object"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:uxap="sap.uxap">
+    <uxap:ObjectPageLayout>
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <Title text="{ProductName}" />
+                </uxap:expandedHeading>
+                <uxap:snappedHeading>
+                    <FlexBox alignItems="Center">
+                        <Title class="sapUiSmallMarginEnd" text="{ProductName}" />
+                        <ObjectStatus
+                            text="{= ${Discontinued} ? ${i18n>discontinued} : ${i18n>inProduction}}"
+                            state="{= ${Discontinued} ? 'Error' : 'Success'}"
+                            inverted="true" />
+                    </FlexBox>
+                </uxap:snappedHeading>
+                <uxap:expandedContent>
+                    <ObjectStatus
+                        text="{= ${Discontinued} ? ${i18n>discontinued} : ${i18n>inProduction}}"
+                        state="{= ${Discontinued} ? 'Error' : 'Success'}"
+                        inverted="true" />
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <ObjectAttribute title="{i18n>category}" text="{Category/CategoryName}" />
+                    <ObjectAttribute title="{i18n>description}" text="{Category/Description}" />
+                </uxap:snappedContent>
+                <uxap:snappedTitleOnMobile>
+                    <Title text="{ProductName}" />
+                </uxap:snappedTitleOnMobile>
+                <uxap:actions>
+                    <OverflowToolbarButton icon="sap-icon://edit" text="{i18n>edit}" tooltip="{i18n>edit}">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow" />
+                        </layoutData>
+                    </OverflowToolbarButton>
+                    <OverflowToolbarButton icon="sap-icon://copy" text="{i18n>copy}" />
+                    <OverflowToolbarButton icon="sap-icon://print" text="{i18n>print}" />
+                    <ToolbarSeparator />
+                    <Button text="{i18n>paymentInfo}" />
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+        <uxap:headerContent>
+            <HBox wrap="Wrap">
+                <VBox class="sapUiMediumMarginEnd sapUiTinyMarginBottom">
+                    <ObjectAttribute title="{i18n>category}" text="{Category/CategoryName}" />
+                    <ObjectAttribute title="{i18n>description}" text="{Category/Description}" />
+                </VBox>
+                <VBox>
+                    <ObjectAttribute title="{i18n>supplier}" text="{Supplier/CompanyName}" />
+                    <ObjectAttribute title="{i18n>contact}" text="{Supplier/ContactName}" />
+                </VBox>
+            </HBox>
+        </uxap:headerContent>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="{i18n>details}" titleUppercase="false">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                            <uxap:blocks>
+                                <f:SimpleForm
+                                    editable="false"
+                                    layout="ResponsiveGridLayout"
+                                    labelSpanXL="3"
+                                    labelSpanL="3"
+                                    labelSpanM="3"
+                                    labelSpanS="12"
+                                    adjustLabelSpan="false"
+                                    emptySpanXL="4"
+                                    emptySpanL="4"
+                                    emptySpanM="4"
+                                    emptySpanS="0"
+                                    columnsXL="1"
+                                    columnsL="1"
+                                    columnsM="1"
+                                    singleContainerFullSize="false" >
+                                    <f:content>
+                                        <Label text="{i18n>unitPrice}" />
+                                        <ObjectNumber
+                                            number="{
+                                                parts: ['UnitPrice', 'Currency'],
+                                                type: 'sap.ui.model.type.Currency'
+                                            }"
+                                            unit="USD" />
+                                        <Label text="{i18n>unitsInStock}" />
+                                        <ObjectNumber
+                                            number="{UnitsInStock}"
+                                            state="{ path: 'UnitsInStock', formatter: '.formatter.formatStockStatus'}" />
+                                        <Label text="{i18n>quantityPerUnit}" />
+                                        <Text text="{QuantityPerUnit}" />
+                                        <Label text="{i18n>unitsOnOrder}" />
+                                        <ObjectNumber number="{UnitsOnOrder}" />
+                                    </f:content>
+                                </f:SimpleForm>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="{i18n>supplier}" titleUppercase="false">
+                    <uxap:heading>
+                        <MessageStrip text="{i18n>warningSensitiveInfo}" showCloseButton="true" type="Warning" />
+                    </uxap:heading>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="{i18n>address}">
+                            <uxap:blocks>
+                                <f:SimpleForm>
+                                    <f:content>
+                                        <Label text="{i18n>companyName}" />
+                                        <Text text="{Supplier/CompanyName}" />
+                                        <Label text="{i18n>street}" />
+                                        <Text text="{Supplier/Address}" />
+                                        <Label text="{i18n>city}" />
+                                        <Text text="{Supplier/City}" />
+                                        <Label text="{i18n>postalCode}" />
+                                        <Text text="{Supplier/PostalCode}" />
+                                        <Label text="{i18n>country}" />
+                                        <Text text="{Supplier/Country}" />
+                                    </f:content>
+                                </f:SimpleForm>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="{i18n>contactDetails}">
+                            <uxap:blocks>
+                                <f:SimpleForm>
+                                    <f:content>
+                                        <Label text="{i18n>contactName}" />
+                                        <Text text="{Supplier/ContactName}" />
+                                        <Label text="{i18n>contactTitle}" />
+                                        <Text text="{Supplier/ContactTitle}" />
+                                        <Label text="{i18n>phone}" />
+                                        <Text text="{Supplier/Phone}" />
+                                        <Label text="{i18n>fax}" />
+                                        <Text text="{Supplier/Fax}" />
+                                        <Label text="{i18n>website}" />
+                                        <Text text="{Supplier/HomePage}" />
+                                    </f:content>
+                                </f:SimpleForm>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>
