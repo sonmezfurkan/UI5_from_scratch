@@ -1,0 +1,141 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "ui5.my.products",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:worklist",
+      "version": "1.9.0",
+      "toolsId": "b5ca3eb7-7a09-41ad-95ff-13d7249d92ee"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.3",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.my.products.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ui5.my.products.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "worklist",
+          "target": [
+            "worklist"
+          ]
+        },
+        {
+          "pattern": "Products/{objectId}",
+          "name": "object",
+          "target": [
+            "object"
+          ]
+        }
+      ],
+      "targets": {
+        "worklist": {
+          "viewName": "Worklist",
+          "viewId": "worklist",
+          "viewLevel": 1,
+          "title": "{i18n>worklistViewTitle}"
+        },
+        "object": {
+          "viewName": "Object",
+          "viewId": "object",
+          "viewLevel": 2,
+          "title": "{i18n>objectViewTitle}"
+        },
+        "objectNotFound": {
+          "viewName": "ObjectNotFound",
+          "viewId": "objectNotFound"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ui5.my.products.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}
