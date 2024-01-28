@@ -1,0 +1,159 @@
+<mvc:View
+    controllerName="ui5.my.products.controller.Worklist"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        showFooter="true"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <Title
+                text="{i18n>worklistTitle}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <IconTabBar
+                class="{= ${device>/system/phone} ? '' : 'sapUiResponsiveContentPadding'}"
+                select="onSelectFilter">
+                <items>
+                    <IconTabFilter
+                        showAll="true"
+                        count="{worklistView>/countAll}"
+                        text="{= !${device>/system/phone} ? ${i18n>products} : ${i18n>all} }"
+                        key="all" />
+                    <IconTabSeparator />
+                    <IconTabFilter
+                        icon="sap-icon://message-success"
+                        count="{worklistView>/countAvailable}"
+                        iconColor="Positive"
+                        text="{i18n>available}"
+                        key="available" />
+                    <IconTabFilter
+                        icon="sap-icon://message-warning"
+                        count="{worklistView>/countLowOnStock}"
+                        iconColor="Critical"
+                        text="{i18n>lowOnStock}"
+                        key="lowOnStock" />
+                    <IconTabFilter
+                        icon="sap-icon://message-error"
+                        count="{worklistView>/countUnavailable}"
+                        iconColor="Negative"
+                        text="{i18n>unavailable}"
+                        key="unavailable" />
+                </items>
+                <content>
+                    <Table
+                        id="table"
+                        width="auto"
+                        items="{
+                            path: '/Products',
+                            parameters: {
+                                expand: 'Category,Supplier'
+                            },
+                            sorter: {
+                                path: 'ProductName',
+                                descending: false
+                            }
+                        }"
+                        noDataText="{worklistView>/tableNoDataText}"
+                        busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                        growing="true"
+                        growingScrollToLoad="true"
+                        updateFinished=".onUpdateFinished">
+
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <Title
+                                    id="tableHeader"
+                                    text="{worklistView>/worklistTableTitle}"
+                                    level="H3"/>
+                                <ToolbarSpacer />
+                                <SearchField
+                                    id="searchField"
+                                    tooltip="{i18n>worklistSearchTooltip}"
+                                    search=".onSearch">
+                                    <layoutData>
+                                        <OverflowToolbarLayoutData
+                                            maxWidth="200px"
+                                            priority="NeverOverflow"/>
+                                    </layoutData>
+                                </SearchField>
+                            </OverflowToolbar>
+                        </headerToolbar>
+
+                        <columns>
+                            <Column id="nameColumn">
+                                <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Desktop">
+                                <Text text="{i18n>category}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet">
+                                <Text text="{i18n>supplier}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet" width="15%" hAlign="Center">
+                                <Text text="{i18n>status}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet" hAlign="End" width="15%">
+                                <Text text="{i18n>unitsInStock}" />
+                            </Column>
+                            <Column id="unitNumberColumn" hAlign="End" width="15%">
+                                <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+                            </Column>
+                            <Column id="unitCategoryColumn">
+                                <Text text="Category" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem
+                                type="Navigation"
+                                press=".onPress">
+                                <cells>
+                                    <ObjectIdentifier
+                                        title="{ProductName}"/>
+                                    <Text text="{Category/CategoryName}" />
+                                    <Text text="{Supplier/CompanyName}" />
+                                    <ObjectStatus
+                                        text="{= ${Discontinued} ? ${i18n>discontinued} : ${i18n>inProduction}}"
+                                        state="{= ${Discontinued} ? 'Error' : 'Success'}" />
+                                    <ObjectNumber
+                                        number="{UnitsInStock}"
+                                        state="{ path: 'UnitsInStock', formatter: '.formatter.formatStockStatus'}" />
+                                    <ObjectNumber
+                                        number="{
+                                            parts: ['UnitPrice', 'Currency'],
+                                            type: 'sap.ui.model.type.Currency'
+                                        }"
+                                        unit="USD" />
+                                    <ComboBox items="{
+                                        path :'/Categories',
+                                        templateShareable: true
+                                    }">
+                                        <core:Item key="{CategoryID}" text="{CategoryName}" />
+                                    </ComboBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </IconTabBar>
+        </semantic:content>
+
+        <semantic:footerCustomActions>
+			<Button icon="sap-icon://excel-attachment" press="onExport" />
+		</semantic:footerCustomActions>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
