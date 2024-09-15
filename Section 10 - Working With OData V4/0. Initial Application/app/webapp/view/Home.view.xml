@@ -1,0 +1,114 @@
+<mvc:View
+    controllerName="odata.v4.demo.trippin.controller.Home"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <Title
+                text="{i18n>title}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <IconTabBar
+                id="idIconTabBar"
+                select="onSelectFilter"
+                class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter
+                        showAll="true"
+                        text="{i18n>allUsers}"
+                        key="all" />
+                    <IconTabSeparator />
+                    <IconTabFilter
+                        icon="sap-icon://message-success"
+                        iconColor="Positive"
+                        text="{i18n>vip}"
+                        key="vip" />
+                    <IconTabFilter
+                        icon="sap-icon://person-placeholder"
+                        text="{i18n>regular}"
+                        key="regular" />
+                </items>
+                <content>
+                    <Table
+                        id="table"
+                        width="auto"
+                        mode="Delete"
+                        delete=".onPressDelete"
+                        growing="true"
+                        growingThreshold="12"
+                        items="{
+                            path: '/People',
+                            parameters: {
+                                $expand: 'status,emails'
+                            }
+                        }">
+
+                        <headerToolbar>
+                            <Toolbar>
+                                <Button text="{i18n>showMostExpensiveTrips}" press=".onPressShowMostExpensiveTrips" />
+                                <ToolbarSpacer />
+                                <Button icon="sap-icon://add" press=".onPressCreate" />
+                            </Toolbar>
+                        </headerToolbar>
+
+                        <columns>
+                            <Column>
+                                <Text text="{i18n>userName}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Desktop">
+                                <Text text="{i18n>firstName}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet">
+                                <Text text="{i18n>lastName}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet">
+                                <Text text="{i18n>gender}" />
+                            </Column>
+                            <Column width="5%" hAlign="End">
+                                <Text text="{i18n>age}" />
+                            </Column>
+                            <Column demandPopin="true" minScreenWidth="Tablet" hAlign="Center">
+                                <Text text="{i18n>status}" />
+                            </Column>
+                            <Column width="20%" demandPopin="true" minScreenWidth="Tablet">
+                                <Text text="{i18n>emails}" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem
+                                type="Navigation"
+                                press=".onPress">
+                                <cells>
+                                    <ObjectIdentifier title="{userName}" />
+                                    <Text text="{firstName}" />
+                                    <Text text="{lastName}" />
+                                    <Text text="{gender}" />
+                                    <ObjectNumber number="{age}" />
+                                    <ObjectStatus
+                                        text="{status/name}"
+                                        state="{ path: 'status/code', formatter: '.formatter.formatUserStatusState' }" />
+                                    <VBox
+                                        items="{
+                                            path: 'emails',
+                                            templateShareable: false
+                                        }">
+                                        <Text class="sapUiTinyMarginBottom" text="{address}" />
+                                    </VBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </IconTabBar>
+        </semantic:content>
+    </semantic:SemanticPage>
+</mvc:View>

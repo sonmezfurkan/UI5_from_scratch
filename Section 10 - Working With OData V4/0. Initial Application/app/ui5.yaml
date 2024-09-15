@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: odata.v4.demo.trippin
+type: application
+server:
+  customMiddleware:
+    - name: ui5-middleware-simpleproxy
+      afterMiddleware: compression
+      mountPath: /odata/v4/trippin
+      configuration:
+        baseUri: "http://localhost:4004/odata/v4/trippin"
+        httpHeaders:
+          Access-Control-Allow-Origin: '*'
+#    - name: backend-proxy-middleware
+#      afterMiddleware: compression
+#      configuration:
+#        backend:
+#          path: /odata/v4/trippin
+#          url: http://localhost:4004/odata/v4/trippin
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: odata.v4.demo.trippin
+        ui5Theme: sap_horizon
