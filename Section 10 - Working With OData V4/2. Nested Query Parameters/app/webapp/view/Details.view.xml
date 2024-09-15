@@ -1,0 +1,148 @@
+<mvc:View
+  controllerName="odata.v4.demo.trippin.controller.Details"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:uxap="sap.uxap">
+  <uxap:ObjectPageLayout>
+    <uxap:headerTitle>
+      <uxap:ObjectPageDynamicHeaderTitle>
+        <uxap:expandedHeading>
+          <Title text="{userName}" />
+        </uxap:expandedHeading>
+        <uxap:snappedHeading>
+          <FlexBox alignItems="Center">
+            <Title class="sapUiSmallMarginEnd" text="{userName}" />
+            <ObjectStatus
+              text="{status/name}"
+              state="{ path: 'status/code', formatter: '.formatter.formatUserStatusState' }"
+              inverted="true" />
+          </FlexBox>
+        </uxap:snappedHeading>
+        <uxap:expandedContent>
+          <ObjectStatus
+              text="{status/name}"
+              state="{ path: 'status/code', formatter: '.formatter.formatUserStatusState' }"
+              inverted="true" />
+        </uxap:expandedContent>
+        <uxap:snappedContent>
+            <ObjectAttribute title="{i18n>gender}" text="{gender}" />
+            <ObjectAttribute title="{i18n>age}" text="{age}" />
+        </uxap:snappedContent>
+        <uxap:snappedTitleOnMobile>
+            <Title text="{userName}" />
+        </uxap:snappedTitleOnMobile>
+        <uxap:actions>
+          <Button icon="sap-icon://cancel" text="{i18n>suspend}" press=".onPressSuspend" />
+          <ToolbarSeparator />
+            <OverflowToolbarButton icon="sap-icon://edit" text="{i18n>edit}" tooltip="{i18n>edit}" press=".onPressEdit">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow" />
+                </layoutData>
+            </OverflowToolbarButton>
+        </uxap:actions>
+      </uxap:ObjectPageDynamicHeaderTitle>
+    </uxap:headerTitle>
+
+    <uxap:headerContent>
+      <HBox wrap="Wrap">
+        <VBox class="sapUiMediumMarginEnd sapUiTinyMarginBottom">
+          <ObjectAttribute title="{i18n>gender}" text="{gender}" />
+          <ObjectAttribute title="{i18n>age}" text="{age}" />
+        </VBox>
+      </HBox>
+    </uxap:headerContent>
+    <uxap:sections>
+      <uxap:ObjectPageSection title="{i18n>userDetails}" titleUppercase="false">
+        <uxap:subSections>
+          <uxap:ObjectPageSubSection>
+            <uxap:blocks>
+              <f:SimpleForm
+                editable="false"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="12"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false" >
+                <f:content>
+                  <core:Title text="{i18n>details}" />
+                  <Label text="{i18n>firstName}" />
+                  <Text text="{firstName}" />
+                  <Label text="{i18n>lastName}" />
+                  <Text text="{lastName}" />
+                  <Label text="{i18n>gender}" />
+                  <Text text="{gender}" />
+                  <Label text="{i18n>age}" />
+                  <ObjectNumber number="{age}" />
+                  <core:Title text="{i18n>address}" />
+                  <Label text="{i18n>street}" />
+                  <Text text="{address/address}" />
+                  <Label text="{i18n>city}/{i18n>postalCode}" />
+                  <Text text="{address/city} / {address/postalCode}" />
+                  <Label text="{i18n>country}" />
+                  <Text text="{address/country}" />
+                </f:content>
+              </f:SimpleForm>
+            </uxap:blocks>
+          </uxap:ObjectPageSubSection>
+        </uxap:subSections>
+      </uxap:ObjectPageSection>
+      <uxap:ObjectPageSection title="{i18n>trips}" titleUppercase="false">
+        <uxap:subSections>
+          <uxap:ObjectPageSubSection>
+            <uxap:blocks>
+              <Table items="{trips}">
+                <columns>
+                  <Column>
+                    <Text text="{i18n>trip}" />
+                  </Column>
+                  <Column>
+                    <Text text="{i18n>startsAt}" />
+                  </Column>
+                  <Column>
+                    <Text text="{i18n>endsAt}" />
+                  </Column>
+                  <Column>
+                    <Text text="{i18n>price}" />
+                  </Column>
+                </columns>
+                <items>
+                  <ColumnListItem>
+                    <cells>
+                      <ObjectIdentifier title="{name}" text="{description}" />
+                      <Text text="{
+                        path: 'startsAt',
+                        formatter: '.formatter.formatDate'
+                      }" />
+                      <Text text="{
+                        path: 'endsAt',
+                        formatter: '.formatter.formatDate'
+                      }" />
+                      <Text text="{
+                        parts: ['budget', 'currency_code'],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {
+                          style : 'long'
+                        }
+                      }" />
+                    </cells>
+                  </ColumnListItem>
+                </items>
+              </Table>
+            </uxap:blocks>
+          </uxap:ObjectPageSubSection>
+        </uxap:subSections>
+      </uxap:ObjectPageSection>
+    </uxap:sections>
+  </uxap:ObjectPageLayout>
+</mvc:View>
