@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+  <Dialog id="idDialog" title="{i18n>mostExpensiveTrips}" contentWidth="400px">
+    <!-- <form:SimpleForm editable="true" labelSpanS="3">
+      <Label text="{i18n>count}" />
+      <Input id="idCountInput" />
+      <Label text="" />
+      <Button text="{i18n>showTrips}" press=".onPressShowTrips" />
+    </form:SimpleForm> -->
+    <List>
+      <items>
+        <ObjectListItem
+          title="{name}"
+          number="{budget}"
+          numberUnit="{currency_code}">
+          <attributes>
+            <ObjectAttribute text="{description}" />
+          </attributes>
+        </ObjectListItem>
+      </items>
+    </List>
+    <endButton>
+      <Button text="{i18n>close}" press=".onPressCloseDialog" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>
