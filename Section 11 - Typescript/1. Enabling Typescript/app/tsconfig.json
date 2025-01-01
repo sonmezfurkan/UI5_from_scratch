@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "webapp",
+    "baseUrl": "./",
+    "types": ["@sapui5/types"],
+    "paths": {
+      "odata/v4/demo/trippin/*": ["webapp/*"]
+    }
+  },
+  "include": ["webapp/**/*"]
+}
