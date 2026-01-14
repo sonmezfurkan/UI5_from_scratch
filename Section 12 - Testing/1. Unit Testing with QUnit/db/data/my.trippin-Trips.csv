@@ -1,0 +1,39 @@
+ID,name,budget,currency_code,description,startsAt,endsAt,person_ID
+d7679e99-2aec-46d1-928d-3ecd03153b48,Hawaii Vacation,2500.00,USD,Relaxing on the beach,2024-07-01T00:00:00.000Z,2024-07-10T00:00:00.000Z,d70c77b4-0452-4a6d-a382-fd4bf3dbf5ed
+fa3eb12d-fac8-46b6-96c7-9f243bfd2724,European Tour,6000.00,EUR,Visiting various cities in Europe,2024-08-15T00:00:00.000Z,2024-09-01T00:00:00.000Z,0f8e1a95-907b-47d4-bad6-3b7315d749cc
+5b017fea-3c0c-4195-88ea-1287578472dc,Ski Trip,1200.00,USD,Skiing in the Alps,2024-12-05T00:00:00.000Z,2024-12-12T00:00:00.000Z,11cf8b96-0f4c-4c9a-91d6-3e3e39d28dfd
+b2fa0943-98f9-4964-853c-6f85121e3789,Business Conference,3000.00,USD,Attending a tech conference in San Francisco,2024-10-20T00:00:00.000Z,2024-10-24T00:00:00.000Z,13b7b77a-82a4-45b8-ae10-02a19c64e5f9
+86b00ddc-5285-443b-be07-0046895964bf,Family Reunion,500.00,USD,Family gathering in New York,2024-11-15T00:00:00.000Z,2024-11-17T00:00:00.000Z,ad202cbb-f42c-43bb-b07f-02d450de4a5e
+687343ce-a3d6-42ea-9364-821920d16462,Anniversary Celebration,2000.00,USD,Romantic getaway,2024-09-01T00:00:00.000Z,2024-09-07T00:00:00.000Z,5ae0117b-2f67-4d9d-a9fc-e5717f8b5d69
+280137a4-d0be-4b5e-89ac-9463bf7b1a58,Mountain Hiking,800.00,USD,Hiking trip in the Rockies,2024-06-10T00:00:00.000Z,2024-06-14T00:00:00.000Z,e80f0952-3df1-4762-8b5e-dba095ed9e71
+608c858c-2108-4e0b-a48d-44181023652f,Cultural Tour,1500.00,USD,Exploring ancient sites,2024-04-20T00:00:00.000Z,2024-04-30T00:00:00.000Z,57ed5f3f-e04f-4908-9f2f-d6d4208e1e96
+8a5661a5-579d-4d5e-95c6-97a8cf898395,Beach Holiday,1800.00,USD,Relaxing by the sea,2024-07-15T00:00:00.000Z,2024-07-22T00:00:00.000Z,083e1649-1242-41f8-a8f8-0e2b1e8c8cf5
+c4a40b70-e819-4fbc-8ab0-2a2dd2f90495,City Break,900.00,USD,Weekend in the city,2024-05-05T00:00:00.000Z,2024-05-07T00:00:00.000Z,77479f13-4ac6-4720-8540-38f4648cf8fa
+74248cf5-5654-444e-ba90-a8aa944c8a3e,Desert Safari,1100.00,USD,Exploring the desert,2024-03-10T00:00:00.000Z,2024-03-15T00:00:00.000Z,256ecf97-c5f8-482b-bf7d-4b55a573bcec
+1fc449b2-72f1-47ed-b540-de3f8b010ccc,Art Tour,1300.00,USD,Visiting art museums,2024-06-25T00:00:00.000Z,2024-06-29T00:00:00.000Z,499b0e2b-bd3a-482d-aeec-e582f5e81f5e
+3ca3cca8-69cb-4907-a98c-4d759b8b4bf0,Island Hopping,2500.00,USD,Exploring tropical islands,2024-07-01T00:00:00.000Z,2024-07-12T00:00:00.000Z,4c9dbe69-91e2-4e98-97d5-c0f6543bc95d
+bbce8474-c1bb-4616-a56a-10d1edbdac3a,Mountain Retreat,1500.00,USD,A peaceful retreat in the mountains,2024-09-01T00:00:00.000Z,2024-09-07T00:00:00.000Z,d70c77b4-0452-4a6d-a382-fd4bf3dbf5ed
+ee05517f-2e52-4c93-aabd-f19e971dfe76,City Exploration,1000.00,USD,Exploring the vibrant city life,2024-10-01T00:00:00.000Z,2024-10-05T00:00:00.000Z,d70c77b4-0452-4a6d-a382-fd4bf3dbf5ed
+f8b34589-c926-4e6f-91c3-28eaa1e79476,Adventure Travel,2200.00,USD,Adventurous activities in the wild,2024-11-01T00:00:00.000Z,2024-11-10T00:00:00.000Z,d70c77b4-0452-4a6d-a382-fd4bf3dbf5ed
+04d40270-3108-4a67-b201-e0c407e4620a,Winter Wonderland,2000.00,USD,A magical winter experience,2024-12-01T00:00:00.000Z,2024-12-10T00:00:00.000Z,0f8e1a95-907b-47d4-bad6-3b7315d749cc
+7516d74f-b519-4ac4-8aa6-5f10ae4b788a,Spring Festival,1200.00,USD,Enjoying the spring festivities,2024-05-01T00:00:00.000Z,2024-05-07T00:00:00.000Z,0f8e1a95-907b-47d4-bad6-3b7315d749cc
+84d9aaaf-04fb-4377-90fa-b7ca65b92279,Beach Getaway,1500.00,USD,Relaxing at a beautiful beach,2024-08-01T00:00:00.000Z,2024-08-10T00:00:00.000Z,11cf8b96-0f4c-4c9a-91d6-3e3e39d28dfd
+b2f4b4cb-25c7-4c01-b1ee-1cb02f7dc25c,Desert Adventure,1800.00,USD,Exploring the vast desert,2024-11-01T00:00:00.000Z,2024-11-10T00:00:00.000Z,11cf8b96-0f4c-4c9a-91d6-3e3e39d28dfd
+36ec7737-6d4c-4502-89c5-fb46dc82a9c7,Romantic Escape,1700.00,USD,A romantic vacation with a loved one,2024-07-15T00:00:00.000Z,2024-07-22T00:00:00.000Z,13b7b77a-82a4-45b8-ae10-02a19c64e5f9
+cdc56a3f-896e-476b-97c0-42107850e262,Tech Summit,3000.00,USD,Attending a major tech summit,2024-10-05T00:00:00.000Z,2024-10-10T00:00:00.000Z,13b7b77a-82a4-45b8-ae10-02a19c64e5f9
+986b8839-6427-4f73-beac-0a7c4d6f24d6,Family Adventure,2500.00,USD,Fun activities for the whole family,2024-12-15T00:00:00.000Z,2024-12-20T00:00:00.000Z,ad202cbb-f42c-43bb-b07f-02d450de4a5e
+ced2d18b-b734-4296-ad86-9c4acaa0c9ed,Cultural Experience,1300.00,USD,Exploring local cultures and traditions,2024-06-01T00:00:00.000Z,2024-06-10T00:00:00.000Z,ad202cbb-f42c-43bb-b07f-02d450de4a5e
+ba41d714-5bb1-45c1-ba7a-0aa983b0499c,Adventure Escape,2000.00,USD,Escape into adventure activities,2024-09-15T00:00:00.000Z,2024-09-22T00:00:00.000Z,5ae0117b-2f67-4d9d-a9fc-e5717f8b5d69
+c225feac-293c-49c7-8889-43842a960834,Relaxation Retreat,1400.00,USD,A retreat for total relaxation,2024-11-20T00:00:00.000Z,2024-11-25T00:00:00.000Z,5ae0117b-2f67-4d9d-a9fc-e5717f8b5d69
+53064e02-3436-4b83-8294-c17369ffb362,City Lights,1500.00,USD,Enjoying the city lights,2024-08-15T00:00:00.000Z,2024-08-20T00:00:00.000Z,e80f0952-3df1-4762-8b5e-dba095ed9e71
+2517b4da-1db3-483e-b7fe-09be67a09c50,Mountain Exploration,1700.00,USD,Exploring the high mountains,2024-07-01T00:00:00.000Z,2024-07-10T00:00:00.000Z,e80f0952-3df1-4762-8b5e-dba095ed9e71
+5a01886b-1385-4d76-b3fe-41c24d68e9b7,Artistic Journey,2000.00,USD,Discovering art and culture,2024-06-01T00:00:00.000Z,2024-06-15T00:00:00.000Z,083e1649-1242-41f8-a8f8-0e2b1e8c8cf5
+405ed413-f178-4ebe-afad-7dae1046613f,Scenic Route,1800.00,USD,Enjoying scenic views,2024-09-01T00:00:00.000Z,2024-09-10T00:00:00.000Z,083e1649-1242-41f8-a8f8-0e2b1e8c8cf5
+72548d1a-75d0-4910-8038-79626d1c245d,Weekend Getaway,1000.00,USD,A relaxing weekend escape,2024-04-01T00:00:00.000Z,2024-04-03T00:00:00.000Z,77479f13-4ac6-4720-8540-38f4648cf8fa
+edaadeac-c275-407e-b6c5-20d1ff36a84a,Explorer's Dream,2200.00,USD,Exploring remote destinations,2024-12-01T00:00:00.000Z,2024-12-15T00:00:00.000Z,77479f13-4ac6-4720-8540-38f4648cf8fa
+5973d16c-f618-4420-a249-b682176bc747,Tropical Paradise,2500.00,USD,Enjoying the tropics,2024-07-01T00:00:00.000Z,2024-07-10T00:00:00.000Z,256ecf97-c5f8-482b-bf7d-4b55a573bcec
+ebdaaea2-c813-479c-8089-9cb803e30b8b,Historic Journey,1300.00,USD,Visiting historic sites,2024-08-15T00:00:00.000Z,2024-08-22T00:00:00.000Z,256ecf97-c5f8-482b-bf7d-4b55a573bcec
+2253d2c6-df85-4b9e-81ae-ec7395a97bec,Adventure Quest,1700.00,USD,Quest for adventure,2024-05-01T00:00:00.000Z,2024-05-10T00:00:00.000Z,499b0e2b-bd3a-482d-aeec-e582f5e81f5e
+72287878-b058-4d1c-9a32-0df79c1ffb7a,Escape to Nature,1800.00,USD,A nature-filled escape,2024-10-01T00:00:00.000Z,2024-10-10T00:00:00.000Z,499b0e2b-bd3a-482d-aeec-e582f5e81f5e
+e5dfc66c-da01-4714-92ed-aa72ac09b698,Island Adventures,1900.00,USD,Adventures on tropical islands,2024-07-01T00:00:00.000Z,2024-07-10T00:00:00.000Z,4c9dbe69-91e2-4e98-97d5-c0f6543bc95d
+e566b622-6c15-499a-89a7-e4d0da9d31af,City Breaks,1200.00,USD,Exploring different cities,2024-11-01T00:00:00.000Z,2024-11-07T00:00:00.000Z,4c9dbe69-91e2-4e98-97d5-c0f6543bc95d

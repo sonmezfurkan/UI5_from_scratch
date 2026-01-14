@@ -1,0 +1,118 @@
+<mvc:View
+  controllerName="ui5.trippin.controller.Create"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form">
+  <Page
+    class="sapUiResponsiveContentPadding"
+    title="{i18n>createPerson}"
+    showFooter="true">
+    <content>
+      <VBox>
+        <Panel headerText="{i18n>userDetails}">
+          <content>
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="12"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false">
+                <f:content>
+                  <core:Title text="{i18n>details}" />
+                  <Label text="{i18n>userName}" />
+                  <Input value="{userName}" />
+                  <Label text="{i18n>firstName}" />
+                  <Input value="{firstName}" />
+                  <Label text="{i18n>lastName}" />
+                  <Input value="{lastName}" />
+                  <Label text="{i18n>gender}" />
+                  <Input value="{gender}" />
+                  <Label text="{i18n>age}" />
+                  <Input value="{age}" />
+                  <core:Title text="{i18n>address}" />
+                  <Label text="{i18n>street}" />
+                  <Input value="{address/address}" />
+                  <Label text="{i18n>city}/{i18n>postalCode}" />
+                  <Input value="{address/city}" />
+                  <Input value="{address/postalCode}">
+                    <layoutData>
+                      <l:GridData span="XL2 L3 M4 S4" />
+                    </layoutData>
+                  </Input>
+                  <Label text="{i18n>country}" />
+                  <Input value="{address/country}" />
+                </f:content>
+              </f:SimpleForm>
+          </content>
+        </Panel>
+        <Panel class="sapUiSmallMarginTop" headerText="{i18n>trips}">
+          <Table
+            id="idTripsTable"
+            items="{trips}"
+            mode="Delete"
+            delete=".onRemoveTrip">
+            <headerToolbar>
+              <Toolbar>
+                <ToolbarSpacer />
+                <Button icon="sap-icon://add" press=".onPressAddTrip" />
+              </Toolbar>
+            </headerToolbar>
+            <columns>
+              <Column>
+                <Text text="{i18n>name}" />
+              </Column>
+              <Column>
+                <Text text="{i18n>description}" />
+              </Column>
+              <Column>
+                <Text text="{i18n>startsAt}" />
+              </Column>
+              <Column>
+                <Text text="{i18n>endsAt}" />
+              </Column>
+              <Column>
+                <Text text="{i18n>price}" />
+              </Column>
+              <Column>
+                <Text text="{i18n>currency}" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Input value="{name}" />
+                  <Input value="{description}" />
+                  <DatePicker dateValue="{startsAt}" />
+                  <DatePicker dateValue="{endsAt}" />
+                  <Input value="{budget}" />
+                  <ComboBox items="{ path: '/Currencies', templateShareable: false }">
+                    <core:Item key="{code}" text="{name}" />
+                  </ComboBox>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </Panel>
+      </VBox>
+    </content>
+    <footer>
+      <OverflowToolbar>
+        <ToolbarSpacer />
+        <Button type="Emphasized" text="{i18n>save}" press=".onPressSave" />
+        <Button text="{i18n>cancel}" press=".onPressCancel" />
+      </OverflowToolbar>
+    </footer>
+  </Page>
+</mvc:View>

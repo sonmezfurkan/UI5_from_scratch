@@ -1,0 +1,21 @@
+ID,address,city,postalCode,country,person_ID
+d0e891a0-b89e-4986-9fa3-7ddf481f2be4,"123 Main St","Springfield","62701","USA",d70c77b4-0452-4a6d-a382-fd4bf3dbf5ed
+bd7ea058-a9a7-4554-a48d-b784d13f4991,"456 Elm St","Shelbyville","62565","USA",11cf8b96-0f4c-4c9a-91d6-3e3e39d28dfd
+106434dd-1d75-436d-8b17-a4e3447c97eb,"789 Oak Ave","Capital City","62999","USA",13b7b77a-82a4-45b8-ae10-02a19c64e5f9
+230256b5-38e2-4a8e-8f82-525b45320be9,"101 Maple Dr","Riverton","61614","USA",ad202cbb-f42c-43bb-b07f-02d450de4a5e
+f134f564-6c23-40af-9e8b-4c5e896303cd,"202 Pine Ln","Lincoln","68501","USA",5ae0117b-2f67-4d9d-a9fc-e5717f8b5d69
+a7ad2e8f-e176-448d-8df2-fa86b60cc3d3,"303 Cedar Rd","Greenfield","46202","USA",e80f0952-3df1-4762-8b5e-dba095ed9e71
+f6f8293c-3422-4b9a-be99-5b2e4c1ab7f3,"404 Birch Ct","Brighton","60605","USA",57ed5f3f-e04f-4908-9f2f-d6d4208e1e96
+cdb3c908-1b64-4bf4-9de5-35621fba9e4c,"505 Walnut St","Oakwood","75201","USA",083e1649-1242-41f8-a8f8-0e2b1e8c8cf5
+9e962e38-ea48-4f4f-927e-8bdff410ddb6,"606 Cherry Ave","Mason","54321","USA",77479f13-4ac6-4720-8540-38f4648cf8fa
+c6373035-32c2-4749-9ce1-f7af9bc60fb3,"707 Maple St","Glenwood","54321","USA",256ecf97-c5f8-482b-bf7d-4b55a573bcec
+f36d0b98-b0e2-4838-acd9-878c41b5d75d,"808 Cedar Blvd","Riverside","23456","USA",499b0e2b-bd3a-482d-aeec-e582f5e81f5e
+964af556-7320-44b7-b9ac-cf68b6e2c90c,"909 Pine Dr","Centerville","34567","USA",4c9dbe69-91e2-4e98-97d5-c0f6543bc95d
+dd664ca9-f5bf-4497-a198-d129a3fb4953,"1010 Oak St","Hometown","45678","USA",7466ddcf-78d5-4b98-bb99-4ebeb1ff1f8e
+32ada617-d338-4d36-8725-d5d458ad1cc5,"1111 Birch Ave","Village","56789","USA",9e91c29f-601e-4322-95c6-b58890c9df82
+3c2ae096-9d7f-4f52-8a4d-9fbc50c30ac9,"1212 Walnut Ln","Downtown","67890","USA",8b83cb3e-c550-4648-8a9b-dffac1bde2c8
+a8a028bb-0785-462a-ac3b-261358b561d3,"1313 Cherry St","Metropolis","78901","USA",d5757fb4-c760-48a2-9ec6-7c88c5c3fdec
+c37ba0b2-9fe3-4696-9f97-8102aff93169,"1414 Maple Dr","Suburbia","89012","USA",6f8a8d1c-17e1-43b1-a947-f48d2ccdbba2
+d6905153-d248-4259-9fe3-a3322d346b25,"1515 Cedar St","Uptown","90123","USA",de25f0c4-70a4-44c1-bb93-cb78f1eaa7e1
+1afedfdd-bb64-459a-917b-2f5c6c50e486,"1616 Oak Ln","Parkside","01234","USA",c6f1b53b-9fbb-4b18-bb1d-635bb9a6897a
+7ba8b974-fee0-4464-95dd-c89ee301f607,"1616 Oak Ln","Parkside","01234","USA",c6f1b53b-9fbb-4b18-bb1d-635bb9a6897a

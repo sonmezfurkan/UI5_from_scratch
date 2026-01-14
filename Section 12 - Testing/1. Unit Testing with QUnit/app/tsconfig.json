@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2023", // the target environmet for which our code will be complied
+    "module": "es2022", // defineds the module system to be used in the compiled code. We use ES, could be CommonJS
+    "moduleResolution": "node", // resolution mode for the modules. we have to use node.
+    "skipLibCheck": true, // skip checks for declaration *.d.ts files
+    "strict": true, // enables strict type-checking options, like noImplicitAny
+    "strictPropertyInitialization": false, // when enabled,
+    // TypeScript enforces that class properties must be initialized either directly in their declaration or, in the class constructor.
+    "rootDir": "webapp", // root directory of the source files
+    "baseUrl": "./", // base directory for resolving non-relative module names (./ indicates the current directory).
+    "types": ["@sapui5/types", "jquery", "qunit"], // packages that includes the type definitions
+    "paths": {
+      "ui5/trippin/*": ["webapp/*"] // Creates alias mappings for module resolution
+      // instead of import from "../../webapp/module", we can do "ui5/trippin/module"
+    }
+  },
+  "include": ["webapp/**/*"] // Files to be included in the compilation
+}
